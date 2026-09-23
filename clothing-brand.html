@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IKAVATI — Tradition Reimagined</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --black:#11100e;
+    --cream:#f3eee5;
+    --ivory:#faf7f0;
+    --stone:#ddd5c8;
+    --gold:#a88955;
+    --darkgold:#80683e;
+    --grey:#777168;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--ivory);
+    color:var(--black);
+    font-family:'Montserrat',sans-serif;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+section{
+    padding:110px 7%;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    height:88px;
+    padding:0 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgba(17,16,14,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(168,137,85,.25);
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+/* PREMIUM R + M MONOGRAM */
+
+.monogram{
+    position:relative;
+    width:54px;
+    height:54px;
+    border:1px solid var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.monogram svg{
+    width:43px;
+    height:43px;
+}
+
+.logo-name{
+    color:var(--cream);
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    letter-spacing:5px;
+    line-height:1;
+}
+
+.logo-owner{
+    color:var(--gold);
+    font-size:8px;
+    letter-spacing:4px;
+    margin-top:5px;
+}
+
+.nav-links{
+    display:flex;
+    gap:38px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#eee8dc;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    padding:0;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+.hero img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10,9,8,.82),
+            rgba(10,9,8,.35),
+            rgba(10,9,8,.12)
+        );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:760px;
+    padding:0 7%;
+    color:white;
+}
+
+.eyebrow{
+    font-size:11px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:#d8bd86;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(70px,10vw,145px);
+    line-height:.82;
+    letter-spacing:3px;
+    font-weight:500;
+}
+
+.hero h2{
+    margin-top:28px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+    font-weight:400;
+}
+
+.hero p{
+    margin-top:20px;
+    max-width:560px;
+    line-height:1.9;
+    color:#e9e2d6;
+    font-size:13px;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:34px;
+    padding:15px 29px;
+    border:1px solid #d3b77e;
+    color:white;
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    background:var(--gold);
+    border-color:var(--gold);
+}
+
+/* ================= INTRO ================= */
+
+.intro{
+    background:var(--cream);
+    text-align:center;
+}
+
+.section-label{
+    color:var(--darkgold);
+    font-size:10px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.intro h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:60px;
+    font-weight:500;
+    max-width:850px;
+    margin:auto;
+    line-height:1;
+}
+
+.intro p{
+    max-width:700px;
+    margin:30px auto 0;
+    color:var(--grey);
+    line-height:1.9;
+    font-size:13px;
+}
+
+/* ================= STATS ================= */
+
+.stats{
+    background:var(--black);
+    color:white;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding:65px 7%;
+}
+
+.stat{
+    text-align:center;
+    padding:15px;
+    border-right:1px solid rgba(255,255,255,.15);
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat-number{
+    color:var(--gold);
+    font-family:'Cormorant Garamond',serif;
+    font-size:42px;
+}
+
+.stat-text{
+    margin-top:8px;
+    font-size:9px;
+    letter-spacing:2px;
+    color:#bdb6aa;
+    text-transform:uppercase;
+}
+
+/* ================= COLLECTIONS ================= */
+
+.collections{
+    background:var(--ivory);
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:45px;
+}
+
+.section-head h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:62px;
+    font-weight:500;
+}
+
+.section-head p{
+    max-width:400px;
+    color:var(--grey);
+    font-size:12px;
+    line-height:1.8;
+}
+
+.collection-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+}
+
+.collection-card{
+    position:relative;
+    height:650px;
+    overflow:hidden;
+}
+
+.collection-card img{
+    height:100%;
+    object-fit:cover;
+    transition:1s;
+}
+
+.collection-card:hover img{
+    transform:scale(1.05);
+}
+
+.collection-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+    padding:45px;
+    color:white;
+    background:linear-gradient(
+        transparent 40%,
+        rgba(0,0,0,.75)
+    );
+}
+
+.collection-overlay h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:50px;
+    font-weight:500;
+}
+
+.collection-overlay p{
+    font-size:10px;
+    letter-spacing:2px;
+    margin-top:8px;
+}
+
+/* ================= ARRIVALS ================= */
+
+.arrivals{
+    background:var(--cream);
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.product img{
+    height:430px;
+    object-fit:cover;
+}
+
+.product-info{
+    padding:18px 4px;
+}
+
+.product-info h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    font-weight:500;
+}
+
+.product-info p{
+    color:var(--grey);
+    font-size:10px;
+    letter-spacing:1px;
+    margin-top:5px;
+}
+
+/* ================= EDITORIAL ================= */
+
+.editorial{
+    padding:0;
+    background:var(--black);
+    color:white;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.editorial-image{
+    min-height:700px;
+}
+
+.editorial-image img{
+    height:100%;
+    object-fit:cover;
+}
+
+.editorial-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:80px;
+}
+
+.editorial-content h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:70px;
+    line-height:.95;
+    font-weight:500;
+}
+
+.editorial-content p{
+    margin-top:30px;
+    max-width:500px;
+    line-height:1.9;
+    color:#bbb4a8;
+    font-size:13px;
+}
+
+/* ================= FOUNDER ================= */
+
+.founder{
+    background:var(--ivory);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:90px;
+    align-items:center;
+}
+
+.founder-image{
+    height:650px;
+    overflow:hidden;
+}
+
+.founder-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.founder-content h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:72px;
+    line-height:.9;
+    font-weight:500;
+}
+
+.founder-content .founder-name{
+    margin-top:18px;
+    color:var(--gold);
+    letter-spacing:3px;
+    font-size:11px;
+    text-transform:uppercase;
+}
+
+.founder-content p{
+    margin-top:30px;
+    color:var(--grey);
+    line-height:2;
+    font-size:13px;
+}
+
+.signature{
+    margin-top:35px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+    font-style:italic;
+}
+
+/* ================= ATELIER ================= */
+
+.atelier{
+    background:var(--cream);
+}
+
+.atelier-grid{
+    display:grid;
+    grid-template-columns:1.4fr .8fr .8fr;
+    gap:18px;
+}
+
+.atelier-grid img{
+    height:500px;
+    object-fit:cover;
+}
+
+.atelier-grid img:first-child{
+    height:650px;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.experience{
+    background:var(--black);
+    color:white;
+    text-align:center;
+}
+
+.experience h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:68px;
+    font-weight:500;
+}
+
+.experience p{
+    max-width:650px;
+    margin:25px auto 0;
+    color:#bdb6aa;
+    line-height:1.9;
+    font-size:13px;
+}
+
+/* ================= REVIEWS ================= */
+
+.reviews{
+    background:var(--ivory);
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.review{
+    background:white;
+    padding:40px;
+    border:1px solid #e4ddd2;
+}
+
+.stars{
+    color:var(--gold);
+    letter-spacing:4px;
+}
+
+.review p{
+    margin-top:22px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:23px;
+    line-height:1.3;
+}
+
+.review span{
+    display:block;
+    margin-top:25px;
+    color:var(--grey);
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+/* ================= STORE ================= */
+
+.store{
+    background:var(--cream);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    padding:0;
+}
+
+.store-image img{
+    height:650px;
+    object-fit:cover;
+}
+
+.store-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:80px;
+}
+
+.store-content h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:72px;
+    font-weight:500;
+}
+
+.store-detail{
+    margin-top:35px;
+}
+
+.store-detail small{
+    display:block;
+    color:var(--gold);
+    letter-spacing:3px;
+    font-size:9px;
+    margin-bottom:8px;
+}
+
+.store-detail p{
+    color:var(--grey);
+    line-height:1.8;
+    font-size:13px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:var(--black);
+    color:white;
+    padding:75px 7% 35px;
+}
+
+.footer-top{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:60px;
+    padding-bottom:60px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.footer-brand h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    letter-spacing:5px;
+}
+
+.footer-brand p{
+    color:#aaa39a;
+    max-width:380px;
+    line-height:1.8;
+    font-size:12px;
+    margin-top:15px;
+}
+
+.footer-col h4{
+    color:var(--gold);
+    font-size:9px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.footer-col a{
+    display:block;
+    color:#aaa39a;
+    font-size:11px;
+    margin-bottom:12px;
+}
+
+.footer-bottom{
+    padding-top:25px;
+    display:flex;
+    justify-content:space-between;
+    color:#777168;
+    font-size:9px;
+    letter-spacing:1px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    section{
+        padding:80px 6%;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat:nth-child(2){
+        border-right:0;
+    }
+
+    .stat{
+        margin-bottom:20px;
+    }
+
+    .collection-grid,
+    .editorial,
+    .founder,
+    .store{
+        grid-template-columns:1fr;
+    }
+
+    .collection-card{
+        height:550px;
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .atelier-grid{
+        grid-template-columns:1fr;
+    }
+
+    .atelier-grid img,
+    .atelier-grid img:first-child{
+        height:500px;
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .editorial-content{
+        padding:70px 6%;
+    }
+
+    .store-content{
+        padding:70px 6%;
+    }
+
+    .footer-top{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        height:75px;
+        padding:0 5%;
+    }
+
+    .monogram{
+        width:45px;
+        height:45px;
+    }
+
+    .monogram svg{
+        width:36px;
+        height:36px;
+    }
+
+    .logo-name{
+        font-size:20px;
+        letter-spacing:4px;
+    }
+
+    .hero h1{
+        font-size:70px;
+    }
+
+    .hero h2{
+        font-size:25px;
+    }
+
+    .intro h2,
+    .section-head h2,
+    .experience h2{
+        font-size:48px;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .section-head p{
+        margin-top:20px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .product img{
+        height:500px;
+    }
+
+    .founder-content h2,
+    .store-content h2{
+        font-size:55px;
+    }
+
+    .footer-top{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:12px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <a href="#home" class="logo-area">
+
+        <!-- R + M HIDDEN/MERGED MONOGRAM -->
+        <div class="monogram">
+
+            <svg viewBox="0 0 100 100"
+                 xmlns="http://www.w3.org/2000/svg">
+
+                <!-- R structure -->
+                <path
+                    d="M22 76V22H47
+                       C62 22 66 31 66 40
+                       C66 50 59 56 47 56H22
+                       M47 56L70 76"
+                    fill="none"
+                    stroke="#a88955"
+                    stroke-width="6"
+                    stroke-linecap="square"
+                    stroke-linejoin="miter"/>
+
+                <!-- M structure merged into R -->
+                <path
+                    d="M30 76V38L50 61L70 38V76"
+                    fill="none"
+                    stroke="#a88955"
+                    stroke-width="6"
+                    stroke-linecap="square"
+                    stroke-linejoin="miter"/>
+
+            </svg>
+
+        </div>
+
+        <div>
+            <div class="logo-name">IKAVATI</div>
+            <div class="logo-owner">MAYANK</div>
+        </div>
+
+    </a>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#collections">Collections</a>
+        </li>
+
+        <li>
+            <a href="#atelier">Atelier</a>
+        </li>
+
+        <li>
+            <a href="#founder">The Founder</a>
+        </li>
+
+        <li>
+            <a href="#store">Visit</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <img
+    src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2200&q=90"
+    alt="Luxury fashion">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            House of Contemporary Indian Fashion
+        </div>
+
+        <h1>IKAVATI</h1>
+
+        <h2>Tradition, Reimagined.</h2>
+
+        <p>
+            A contemporary Indian fashion house where heritage,
+            craftsmanship and modern design come together in a
+            refined expression of personal style.
+        </p>
+
+        <a href="#collections" class="hero-btn">
+            Discover the Collection
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro">
+
+    <div class="section-label">
+        The House
+    </div>
+
+    <h2>
+        Indian character.
+        Contemporary soul.
+    </h2>
+
+    <p>
+        IKAVATI brings together the richness of Indian traditions
+        with modern silhouettes, refined textures and timeless
+        craftsmanship.
+    </p>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<div class="stats">
+
+    <div class="stat">
+
+        <div class="stat-number">
+            4.8★
+        </div>
+
+        <div class="stat-text">
+            Guest Rating
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <div class="stat-number">
+            02
+        </div>
+
+        <div class="stat-text">
+            Signature Collections
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <div class="stat-number">
+            ∞
+        </div>
+
+        <div class="stat-text">
+            Attention to Detail
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <div class="stat-number">
+            10–9
+        </div>
+
+        <div class="stat-text">
+            Open Every Day
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= COLLECTIONS ================= -->
+
+<section class="collections" id="collections">
+
+    <div class="section-head">
+
+        <div>
+
+            <div class="section-label">
+                Collections
+            </div>
+
+            <h2>
+                Curated for you.
+            </h2>
+
+        </div>
+
+        <p>
+            Distinct expressions for modern wardrobes,
+            designed with an Indian point of view.
+        </p>
+
+    </div>
+
+
+    <div class="collection-grid">
+
+        <div class="collection-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1400&q=90"
+            alt="Men collection">
+
+            <div class="collection-overlay">
+
+                <h3>
+                    Men
+                </h3>
+
+                <p>
+                    STRUCTURED · REFINED · TIMELESS
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="collection-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1400&q=90"
+            alt="Women collection">
+
+            <div class="collection-overlay">
+
+                <h3>
+                    Women
+                </h3>
+
+                <p>
+                    ELEGANT · EXPRESSIVE · MODERN
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEW ARRIVALS ================= -->
+
+<section class="arrivals">
+
+    <div class="section-head">
+
+        <div>
+
+            <div class="section-label">
+                New Arrivals
+            </div>
+
+            <h2>
+                The Edit.
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="products">
+
+        <div class="product">
+
+            <img
+            src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1000&q=90"
+            alt="Fashion piece">
+
+            <div class="product-info">
+
+                <h3>
+                    The Heritage Jacket
+                </h3>
+
+                <p>
+                    CONTEMPORARY CLASSIC
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <img
+            src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=1000&q=90"
+            alt="Fashion piece">
+
+            <div class="product-info">
+
+                <h3>
+                    Ivory Drape
+                </h3>
+
+                <p>
+                    MODERN INDIAN
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <img
+            src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=1000&q=90"
+            alt="Fashion piece">
+
+            <div class="product-info">
+
+                <h3>
+                    Midnight Form
+                </h3>
+
+                <p>
+                    EVENING EDIT
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <img
+            src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=1000&q=90"
+            alt="Fashion piece">
+
+            <div class="product-info">
+
+                <h3>
+                    Sandstone Tailoring
+                </h3>
+
+                <p>
+                    SIGNATURE COLLECTION
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDITORIAL ================= -->
+
+<section class="editorial">
+
+    <div class="editorial-image">
+
+        <img
+        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1500&q=90"
+        alt="Indian fashion editorial">
+
+    </div>
+
+
+    <div class="editorial-content">
+
+        <div class="section-label">
+            Editorial
+        </div>
+
+        <h2>
+            Made for
+            presence.
+        </h2>
+
+        <p>
+            Clothing should not simply be worn.
+            It should become part of how you enter a room,
+            how you carry yourself and how you are remembered.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOUNDER ================= -->
+
+<section class="founder" id="founder">
+
+    <div class="founder-image">
+
+        <!-- BEAUTIFUL FLOWER IMAGE -->
+
+        <img
+        src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1400&q=90"
+        alt="Beautiful elegant flowers">
+
+    </div>
+
+
+    <div class="founder-content">
+
+        <div class="section-label">
+            The Founder
+        </div>
+
+        <h2>
+            Mayank
+            Kukreti
+        </h2>
+
+        <div class="founder-name">
+            Founder · IKAVATI
+        </div>
+
+        <p>
+            IKAVATI was created with a simple vision:
+            to build a fashion house where Indian character
+            and contemporary design could exist beautifully together.
+        </p>
+
+        <p>
+            Inspired by India's traditions, architecture,
+            textures and timeless clothing, Mayank Kukreti
+            envisioned a space where every collection feels
+            considered, personal and enduring.
+        </p>
+
+        <p>
+            For IKAVATI, luxury is not only about appearance.
+            It is about quality, character, attention to detail
+            and the feeling of being personally welcomed.
+        </p>
+
+        <div class="signature">
+            Mayank Kukreti
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ATELIER ================= -->
+
+<section class="atelier" id="atelier">
+
+    <div class="section-head">
+
+        <div>
+
+            <div class="section-label">
+                The Atelier
+            </div>
+
+            <h2>
+                Behind the House.
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="atelier-grid">
+
+        <img
+        src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=1200&q=90"
+        alt="Fashion atelier">
+
+        <img
+        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1200&q=90"
+        alt="Luxury clothing">
+
+        <img
+        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=90"
+        alt="Fashion collection">
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section class="experience">
+
+    <div class="section-label">
+        The IKAVATI Experience
+    </div>
+
+    <h2>
+        Personal.
+        Considered.
+        Yours.
+    </h2>
+
+    <p>
+        From discovering a collection to selecting the final piece,
+        every interaction is designed to feel calm, personal and refined.
+    </p>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="reviews">
+
+    <div class="section-head">
+
+        <div>
+
+            <div class="section-label">
+                Guest Notes
+            </div>
+
+            <h2>
+                What people say.
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="review-grid">
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                “The attention to detail and the atmosphere
+                make the entire experience feel incredibly personal.”
+            </p>
+
+            <span>
+                Guest Review
+            </span>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                “Beautifully curated pieces with a strong
+                sense of Indian identity and modern elegance.”
+            </p>
+
+            <span>
+                Guest Review
+            </span>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                “A sophisticated space with clothing that
+                feels timeless rather than seasonal.”
+            </p>
+
+            <span>
+                Guest Review
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STORE ================= -->
+
+<section class="store" id="store">
+
+    <div class="store-image">
+
+        <img
+        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1500&q=90"
+        alt="Luxury store interior">
+
+    </div>
+
+
+    <div class="store-content">
+
+        <div class="section-label">
+            Visit The House
+        </div>
+
+        <h2>
+            Come experience
+            IKAVATI.
+        </h2>
+
+
+        <div class="store-detail">
+
+            <small>
+                ADDRESS
+            </small>
+
+            <p>
+                South Extension Street 101,
+                Delhi, India
+            </p>
+
+        </div>
+
+
+        <div class="store-detail">
+
+            <small>
+                HOURS
+            </small>
+
+            <p>
+                10:00 AM — 9:00 PM
+            </p>
+
+        </div>
+
+
+        <div class="store-detail">
+
+            <small>
+                RATING
+            </small>
+
+            <p>
+                4.8 ★ Guest Rating
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <h2>
+                IKAVATI
+            </h2>
+
+            <p>
+                Tradition, reimagined for the modern
+                Indian wardrobe.
+            </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h4>
+                Explore
+            </h4>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#collections">
+                Collections
+            </a>
+
+            <a href="#atelier">
+                Atelier
+            </a>
+
+            <a href="#founder">
+                The Founder
+            </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h4>
+                Visit
+            </h4>
+
+            <a href="#store">
+                South Extension
+            </a>
+
+            <a href="#store">
+                Delhi
+            </a>
+
+            <a href="#store">
+                10 AM — 9 PM
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div>
+            © 2026 IKAVATI
+        </div>
+
+        <div>
+            MAYANK KUKRETI · FOUNDER
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
